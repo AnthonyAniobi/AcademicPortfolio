@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
-      - uses: AlienKevin/flutter-gh-pages@v11
+      - uses: bluefireteam/flutter-gh-pages@v8
         with: 
           baseHref: /AcademicPortfolio/
           webRenderer: canvaskit
