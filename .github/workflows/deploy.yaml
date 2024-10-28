@@ -2,9 +2,9 @@ name: Deploy_Gh-Pages
 
 on:
   workflow_run:
-    workflows: Build_Gh-Pages
-    branches: gh-pages
-    types: completed
+    workflows: [ Build_Gh-Pages ]
+    branches: [ gh-pages ]
+    types: [ completed ]
 
 jobs:
   deploy:
