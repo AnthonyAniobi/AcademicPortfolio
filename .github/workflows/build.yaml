@@ -1,0 +1,27 @@
+name: Build_Gh-Pages
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build static files
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+      - uses: bluefireteam/flutter-gh-pages@v8
+        with: 
+          baseHref: /AcademicPortfolio/
+          webRenderer: canvaskit
+      
+      # - name: Upload static files as artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: '.'
+      
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
