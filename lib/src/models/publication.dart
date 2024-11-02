@@ -1,3 +1,5 @@
+import 'package:anthony/src/utils/routes.dart';
+
 enum PublicationType {
   journal,
   patent,
@@ -5,6 +7,8 @@ enum PublicationType {
 }
 
 class Publication {
+  static const String _path = Routes.publication;
+
   final String title;
   final String description;
   final String abstract;
@@ -22,6 +26,9 @@ class Publication {
     required this.type,
     this.url,
   });
+
+  String get namedRoute => '$_path/${title.toLowerCase().replaceAll(' ', '_')}';
+  String get path => title.toLowerCase().replaceAll(' ', '_');
 
   static List<Publication> get all => [
         Publication(

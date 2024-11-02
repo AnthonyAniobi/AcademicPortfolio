@@ -7,6 +7,12 @@ import 'package:responsive_builder/responsive_builder.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  static Route<dynamic> route(RouteSettings routeSettings) {
+    return MaterialPageRoute(
+      builder: (_) => const HomePage(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
