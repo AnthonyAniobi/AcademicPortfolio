@@ -1,6 +1,7 @@
 import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
 import 'package:anthony/src/feature/home/widgets/contact_list_widget.dart';
+import 'package:anthony/src/feature/home/widgets/current_enterprice.dart';
 import 'package:anthony/src/feature/home/widgets/home_certification_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_project_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_publication_list.dart';
@@ -68,7 +69,9 @@ class HomeWeb extends StatelessWidget {
         ),
         3.minVerticalSpace,
         const HomeProjectList(crossAxisCount: 2),
-        5.verticalSpace,
+        5.minVerticalSpace,
+        const CurrentEnterprice(),
+        10.verticalSpace,
       ],
     );
   }

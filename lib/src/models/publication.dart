@@ -153,7 +153,7 @@ Nigeria.''',
           publicationName:
               'Conference of Engineering Research Technology Innovation and Practice',
           date: DateTime(2023, 1),
-          type: PublicationType.journal,
+          type: PublicationType.conference,
           status: PublicationStatus.published,
           url:
               'https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:556e3c11-5940-4a33-8031-5455acc66799',

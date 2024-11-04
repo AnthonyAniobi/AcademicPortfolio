@@ -1,12 +1,12 @@
 import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
 import 'package:anthony/src/feature/home/widgets/contact_list_widget.dart';
+import 'package:anthony/src/feature/home/widgets/current_enterprice.dart';
 import 'package:anthony/src/feature/home/widgets/home_certification_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_project_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_publication_list.dart';
 import 'package:anthony/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
@@ -63,6 +63,8 @@ class HomeMobile extends StatelessWidget {
         const HomeProjectList(crossAxisCount: 1),
         3.minHorizontalSpace,
         const HomeCertificationList(),
+        5.minVerticalSpace,
+        const CurrentEnterprice(),
         5.verticalSpace,
       ],
     );

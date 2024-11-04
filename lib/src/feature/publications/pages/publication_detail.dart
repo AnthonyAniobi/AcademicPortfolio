@@ -18,7 +18,10 @@ class PublicationDetail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppText.sp14(publication.type.name).w400.blue,
+            AppText.sp14(
+                    '${publication.type.name}${publication.status.isInReview ? ' (In Review)' : ''}')
+                .w400
+                .blue,
             1.minVerticalSpace,
             AppText.sp16(publication.title),
             if (publication.publicationName.isNotEmpty)

@@ -19,8 +19,8 @@ class ContactsListWidget extends StatelessWidget {
         _linkButton('Google Scholar', AppImages.googleScholar,
             'https://scholar.google.com/citations?user=2uUmtYUAAAAJ&hl=en'),
         2.minHorizontalSpace,
-        _linkButton('Github', AppImages.github,
-            'https://www.linkedin.com/in/anthony-aniobi'),
+        _linkButton(
+            'Github', AppImages.github, 'https://github.com/AnthonyAniobi'),
       ],
     );
   }

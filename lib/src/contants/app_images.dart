@@ -10,4 +10,5 @@ class AppImages {
 class AppConstants {
   static const String academicCv =
       'https://drive.google.com/file/d/1zc5yUszsHH7otBr5bgA8Gt7E3gLzxkNJ/view?usp=sharing';
+  static const String aniobiTech = 'https://www.aniobi.tech/';
 }
