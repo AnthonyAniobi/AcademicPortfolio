@@ -1,6 +1,7 @@
 import 'package:anthony/src/extensions/responsive_extension.dart';
 import 'package:anthony/src/feature/home/widgets/publication_list_tile.dart';
 import 'package:anthony/src/models/publication.dart';
+import 'package:anthony/src/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -26,7 +27,7 @@ class HomePublicationList extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () => Routes.push(Routes.publication),
               child: Text(
                 'View All',
                 style: TextStyle(

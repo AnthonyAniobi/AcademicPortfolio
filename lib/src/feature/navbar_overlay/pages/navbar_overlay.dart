@@ -1,4 +1,6 @@
+import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
+import 'package:anthony/src/utils/app_utils.dart';
 import 'package:anthony/src/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -11,9 +13,6 @@ class NavbarOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return LayoutBuilder(builder: (context, constraints){
-
-    // });
     return ResponsiveBuilder(builder: (context, sizingInfo) {
       if (sizingInfo.isMobile) {
         return _NavbarMobile(child);
@@ -49,9 +48,7 @@ class _NavbarWeb extends StatelessWidget {
             .map(
               (menu) => _headerLink(
                 menu.$1,
-                () {
-                  Routes.navKey.currentState?.pushNamed(menu.$2);
-                },
+                menu.$2,
               ),
             )
             .toList(),
@@ -84,9 +81,7 @@ class _NavbarTablet extends StatelessWidget {
             .map(
               (menu) => _headerLink(
                 menu.$1,
-                () {
-                  Routes.navKey.currentState?.pushNamed(menu.$2);
-                },
+                menu.$2,
               ),
             )
             .toList(),
@@ -112,6 +107,7 @@ class _NavbarMobile extends StatelessWidget {
           children: _menu
               .map(
                 (menu) => ListTile(
+                  onTap: menu.$2,
                   title: Text(menu.$1),
                 ),
               )
@@ -165,9 +161,10 @@ InkWell _headerLink(String title, void Function() onTap) {
   );
 }
 
-List<(String, String)> _menu = [
-  ('Publications', Routes.publication),
-  ('Projects', Routes.projects),
-  ('Contact', Routes.contact),
-  ('Cv', ''),
+List<(String, void Function())> _menu = [
+  ('Home', () => Routes.push(Routes.home)),
+  ('Publications', () => Routes.push(Routes.publication)),
+  ('Projects', () => Routes.push(Routes.projects)),
+  // ('Contact', Routes.contact),
+  ('Cv', () => AppUtils.openUrl(AppConstants.academicCv)),
 ];

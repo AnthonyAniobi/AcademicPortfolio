@@ -111,6 +111,7 @@ extension TextExtensions on Text {
     int? maxLines,
     TextAlign? textAlign,
     double? height,
+    FontStyle? fontStyle,
   }) =>
       Text(
         data ?? "",
@@ -119,6 +120,7 @@ extension TextExtensions on Text {
         // style: style?.merge(this.style) ?? this.style,
         style: (style ?? const TextStyle()).copyWith(
           fontWeight: fontWeight,
+          fontStyle: fontStyle,
           color: color,
           decoration: decoration,
           height: height,
@@ -147,5 +149,6 @@ extension TextExtensions on Text {
   Text setMaxLines(int lines) => copyWith(maxLines: lines);
   Text get strikeThrough => copyWith(decoration: TextDecoration.lineThrough);
   Text get underline => copyWith(decoration: TextDecoration.underline);
+  Text get italic => copyWith(fontStyle: FontStyle.italic);
   Text setLineHeight(double height) => copyWith(height: height);
 }

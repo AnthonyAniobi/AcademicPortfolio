@@ -1,9 +1,10 @@
 import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
+import 'package:anthony/src/feature/home/widgets/contact_list_widget.dart';
+import 'package:anthony/src/feature/home/widgets/home_certification_list.dart';
+import 'package:anthony/src/feature/home/widgets/home_project_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_publication_list.dart';
-import 'package:anthony/src/models/publication.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeTablet extends StatelessWidget {
@@ -41,9 +42,7 @@ class HomeTablet extends StatelessWidget {
                     style:
                         TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
                   ),
-                  Row(
-                    children: [],
-                  )
+                  const ContactsListWidget(),
                 ],
               ),
             ),
@@ -52,6 +51,11 @@ class HomeTablet extends StatelessWidget {
         ),
         3.minVerticalSpace,
         const HomePublicationList(),
+        3.minVerticalSpace,
+        const HomeProjectList(crossAxisCount: 1),
+        3.minVerticalSpace,
+        const HomeCertificationList(),
+        5.verticalSpace,
       ],
     );
   }

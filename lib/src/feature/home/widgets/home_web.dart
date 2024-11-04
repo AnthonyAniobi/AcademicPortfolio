@@ -1,10 +1,11 @@
 import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
+import 'package:anthony/src/feature/home/widgets/contact_list_widget.dart';
+import 'package:anthony/src/feature/home/widgets/home_certification_list.dart';
+import 'package:anthony/src/feature/home/widgets/home_project_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_publication_list.dart';
-import 'package:anthony/src/models/publication.dart';
-import 'package:anthony/src/utils/routes.dart';
+import 'package:anthony/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeWeb extends StatelessWidget {
@@ -38,14 +39,10 @@ class HomeWeb extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AppText.sp16(
                     'BSc. Mechanical Engineering\nSpecializing in Programming and AI\nPursuing a carreer in robotics',
-                    style:
-                        TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
-                  ),
-                  Row(
-                    children: [],
-                  )
+                  ).w400,
+                  const ContactsListWidget()
                 ],
               ),
             ),
@@ -54,23 +51,24 @@ class HomeWeb extends StatelessWidget {
         ),
         3.minVerticalSpace,
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: 60.w,
               child: const HomePublicationList(),
             ),
+            3.minHorizontalSpace,
             Expanded(
-              child: Container(
-                color: Colors.blue,
-                child: const Column(
-                  children: [
-                    Text('hello'),
-                  ],
-                ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 1.r),
+                child: const HomeCertificationList(),
               ),
-            )
+            ),
           ],
         ),
+        3.minVerticalSpace,
+        const HomeProjectList(crossAxisCount: 2),
+        5.verticalSpace,
       ],
     );
   }

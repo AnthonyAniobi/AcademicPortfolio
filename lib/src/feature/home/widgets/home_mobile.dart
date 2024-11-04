@@ -1,6 +1,10 @@
 import 'package:anthony/src/contants/app_images.dart';
 import 'package:anthony/src/extensions/responsive_extension.dart';
+import 'package:anthony/src/feature/home/widgets/contact_list_widget.dart';
+import 'package:anthony/src/feature/home/widgets/home_certification_list.dart';
+import 'package:anthony/src/feature/home/widgets/home_project_list.dart';
 import 'package:anthony/src/feature/home/widgets/home_publication_list.dart';
+import 'package:anthony/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -14,27 +18,52 @@ class HomeMobile extends StatelessWidget {
       children: [
         AspectRatio(
           aspectRatio: 1,
-          child: Image.network(
-            AppImages.profile,
-            fit: BoxFit.cover,
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Image.network(
+                  AppImages.profile,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Positioned(
+                right: 0,
+                left: 0,
+                bottom: 0,
+                child: Container(
+                  margin: EdgeInsets.all(1.r),
+                  padding: EdgeInsets.symmetric(horizontal: 4.r, vertical: 2.r),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(1.r),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      AppText.sp16(
+                        'BSc. Mechanical Engineering\nSpecializing in Programming and AI\nPursuing a carreer in robotics',
+                      ).centerText,
+                      1.minVerticalSpace,
+                      const ContactsListWidget(),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         3.minVerticalSpace,
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'BSc. Mechanical Engineering\nSpecializing in Programming and AI\nPursuing a carreer in robotics',
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
-            ),
-            Row(
-              children: [],
-            )
-          ],
-        ),
-        3.minVerticalSpace,
         const HomePublicationList(),
+        3.minVerticalSpace,
+        const HomeProjectList(crossAxisCount: 1),
+        3.minHorizontalSpace,
+        const HomeCertificationList(),
+        5.verticalSpace,
       ],
     );
   }

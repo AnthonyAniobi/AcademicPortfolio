@@ -1,4 +1,8 @@
+import 'package:anthony/src/utils/routes.dart';
+
 class Project {
+  static const String _path = Routes.projects;
+
   final String name;
   final String url;
   final String description;
@@ -12,6 +16,9 @@ class Project {
     required this.displayImg,
     required this.images,
   });
+
+  String get namedRoute => '$_path/${name.toLowerCase().replaceAll(' ', '_')}';
+  String get path => name.toLowerCase().replaceAll(' ', '_');
 
   static List<Project> get all => [
         Project(
