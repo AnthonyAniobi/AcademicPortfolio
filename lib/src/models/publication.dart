@@ -73,13 +73,11 @@ This project presents a real-time object detection and spatial positioning syste
 
 This integrated approach allows unmanned vehicles to detect and position obstacles with low power consumption and minimal cost, suitable for applications such as autonomous navigation and obstacle avoidance. Though limited in long-range detection by the ultrasonic sensor, this system demonstrates a reliable, efficient solution for close-range navigation. With potential future enhancements, including the integration of LiDAR for extended range and calibration to improve edge precision, this setup could advance both the efficiency and reliability of autonomous vehicle navigation in various operational environments.''',
             abstract: '',
-            publicationName:
-                'International Journal of Engineering Applied Science and Technology',
+            publicationName: 'Preprints',
             date: DateTime(2024, 10),
             type: PublicationType.journal,
             status: PublicationStatus.inReview,
-            url:
-                'https://github.com/AnthonyAniobi/Sensor-Fusion-for-Real-Time-Detection',
+            url: 'https://www.preprints.org/manuscript/202411.0611/v1',
             image:
                 'https://res.cloudinary.com/aniobi/image/upload/v1730475271/hardware_projects/sensor_fusion_realtime_spatial_detection/1.png',
             authors: [
